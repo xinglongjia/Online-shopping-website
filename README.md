@@ -3,7 +3,7 @@ final-project-big-hammer created by GitHub Classroom
 
 This is a shopping website application.By using this website,client could view and buy special discount products in Black Friday.We are using MEAN stack.
 
-Prerequisite technologies:  
+## Prerequisite technologies:  
 git  
 MongoDB  
 Nodejs 6.X  
@@ -15,7 +15,7 @@ CORS
 bcriptjs  
 
 
-Basic functions:
+## Basic functions:
 User could sign up by username/password  
 User could login by exist account and logout  
 User could view products in this shopping website  
@@ -31,7 +31,7 @@ User could view its location information in this website
 User could view order history  
 User could contact with seller  
 
-How to set up development environment:  
+## How to set up development environment:  
 clone this project to your device  
 jump to root directory of this project by command line   
 This command would set up all dependencies we need:
