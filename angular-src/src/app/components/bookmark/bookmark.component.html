@@ -1,18 +1,28 @@
+<h2 class="page-header" style="text-align: center">Bookmark</h2>
+<!-- search in Bookmark part -->
+<div class="searchinput">
 <form class="form-inline my-2 my-lg-0">
-  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" [(ngModel)]="search" name="search">
-  <button class="btn btn-outline-success my-2 my-sm-0" type="submit" [routerLink]="['/search']"  (click)="doSearch()">Search</button>
+  <input class="form-control mr-sm-2 form-control" type="text" placeholder="Search" aria-label="Search" [(ngModel)]="search" name="search">
 </form>
-<table id="cart-table" class="table table-striped">
-  <tr>
-    <th scope="col">item</th>
-    <th scope="col">Product</th>
-    <th scope="col">Link</th>
-    <th scope="col">operation</th>
-  </tr>
-  <tr *ngFor="let item of user?.bookmark|searchFilter:search">
-    <td><img data-src="{{item.image}}" alt="Card image cap" style="width: 100px;height: 60px"></td>
-    <td><p>{{item.name}}</p></td>
-    <td><a [routerLink]="[item.url]">http://localhost:4200{{item.url}}</a></td>
-    <td><button class="btn btn-danger" (click)="deletebookmark(item)">Delete</button></td>
-  </tr>
+</div>
+
+<!-- Bookmark list display -->
+<table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Item</th>
+        <th scope="col">Product</th>
+        <th scope="col">Url</th>
+        <th scope="col">Operation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of user?.bookmark|searchFilter:search">
+        <th scope="row"><img data-src="{{item.image}}" alt="Card image cap" style="width: 80px;height: 60px"></th>
+        <td>{{item.name}}</td>
+        <td><a [routerLink]="[item.url]">http://localhost:4200{{item.url}}</a></td>
+        <td><button class="btn btn-outline-danger" (click)="deletebookmark(item)">Delete</button></td>
+      </tr>
+    </tbody>
 </table>
+

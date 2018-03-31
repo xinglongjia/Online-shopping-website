@@ -34,18 +34,24 @@ export class NavbarComponent implements OnInit {
               private bookmarkService:BookmarkService) { }
 
   ngOnInit() {
-    this.authService.getProfile().subscribe(profile =>{//get client's information by getProfile method in authservice
+    this.authService.getProfile().subscribe(profile =>{
       this.user=profile.user;
 
-      this.cartService.getCartList(this.user.username).subscribe(res=>this.itemsincart=res);//get data from mongodb
-      this.bookmarkService.getBookmarkList(this.user.username).subscribe(res=>this.itemsinbookmark=res);//get data from mongodb
+      this.cartService.getCartList(this.user.username).subscribe(res=>this.itemsincart=res);
+      this.bookmarkService.getBookmarkList(this.user.username).subscribe(res=>this.itemsinbookmark=res);
     });
-    this.weatherService.getWeather().subscribe(res=> {//using weather service to show weather information
+    this.weatherService.getWeather().subscribe(res=> {
       this.data=res;
       this.icon="https://openweathermap.org/img/w/"+this.data.weather[0].icon+".png";
       this.temperature=Math.round(this.data.main.temp-273.15)+"℃";
       this.description=this.data.weather[0].main;
     });
+
+
+
+
+    //this.cartService.getCartList(id).subscribe(res=>this.itemsincart=res);
+
   }
 
   doSearch(){
@@ -59,5 +65,18 @@ export class NavbarComponent implements OnInit {
     });
     this.router.navigate(['/login'])
   }
-
+  // onClickCart(){
+  //
+  //   this.cartService.GoToCart().subscribe(data => {
+  //     if(data.success){
+  //       console.log(1)
+  //       //this.flashMessagesService.show('Added successfully!',{cssClass:'alert-success',timeout:3000});
+  //     }
+  //     else{
+  //       console.log(0)
+  //       //this.flashMessagesService.show('Something unexpected happened.',{cssClass:'alert-danger',timeout:3000});
+  //     }
+  //     this.router.navigate(['/productList']);
+  //   });
+  // }
 }

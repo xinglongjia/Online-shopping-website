@@ -1,13 +1,25 @@
 
-<div class="row">
-  <div class="card">
-    <img data-src="{{product.image}}" alt="Card image cap" style="width: 300px;height: 250px">
-    <button (click)="OnClickaddtocart(product)" class="btn btn-outline-primary">add to cart</button>
-    <button (click)="OnClickaddtobookmark(product)" class="btn btn-outline-primary">add to bookmark</button>
-    <button [routerLink]="['/contact']" class="btn btn-outline-primary">contact</button>
-    <h3><a>{{product.name}}</a></h3>
-    <h4>Price: {{product.price}}</h4>
-    <p>Location: {{product.location}}</p>
-    <p class="card-text">Description: {{product.description}}</p>
-  </div>
+<!-- set Each product detail display -->
+<div class="productdetail">
+<div class="card mb-3">
+    <h3 class="card-header">{{product.name}}</h3>
+    <img style="height: 200px; width: 230px; display: block;" data-src="{{product.image}}" alt="Card image">
+    
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Price: {{product.price}}</li>
+      <li class="list-group-item">Location: {{product.location}}</li>
+      <li class="list-group-item">Rating: {{product.rating}}</li>
+      <li class="list-group-item">{{product.description}}</li>
+    </ul>
+    
+    <div class="card-body">
+      <a href="" class="card-link" (click)="OnClickaddtocart(product)" [routerLink]="false">Add to cart</a>
+      <a href="" class="card-link" (click)="OnClickaddtobookmark(product)" [routerLink]="false">Add to bookmark</a>
+      <a href="" class="card-link" [routerLink]="['/contact']">Contact us</a>
+      <a href="" class="card-link" (click)=goBack() [routerLink]="false">Go Back</a>
+    </div>
+    <div class="card-footer text-muted">
+    </div>
 </div>
+</div>
+  

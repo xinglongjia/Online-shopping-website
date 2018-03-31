@@ -35,7 +35,7 @@ export class ProductdetailComponent implements  OnInit{
 
   ngOnInit(){
     this.route.paramMap
-      .switchMap((params: ParamMap) => this.productsService.getProduct(params.get('_id')))//get product data by calling getproduct method in productservice
+      .switchMap((params: ParamMap) => this.productsService.getProduct(params.get('_id')))
       .subscribe(product => this.product = product);
     this.authService.getProfile().subscribe(profile =>{
       this.user=profile.user;
@@ -50,13 +50,17 @@ export class ProductdetailComponent implements  OnInit{
   }
 
 
-  OnClickaddtobookmark(product:Product){//add items to bookmark in mongodb by Addtobookmark method in bookmarkservice
+  OnClickaddtobookmark(product:Product){
     this.bookmarkService.Addtobookmark(product.name,this.user).subscribe(data => {
     });
     window.location.reload(true)
 
 }
 
+  goBack(){
+    window.history.go(-1);
+  }
 
+  
 
 }

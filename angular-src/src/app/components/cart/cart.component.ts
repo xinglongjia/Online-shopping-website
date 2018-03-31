@@ -36,6 +36,7 @@ export class CartComponent implements OnInit {
   total=0;
   totalitem=0;
   temp=0;
+  
   changestatus(item,i){//calculate the totalitems and total price when checkboxes are selected or cancelled
     if(i.checked){
       this.temp=item.Qty;

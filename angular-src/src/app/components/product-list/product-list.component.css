@@ -1,1 +1,10 @@
-
+.list-group {
+  margin-top: 20px; }
+  .list-group .listimage {
+    float: left; }
+  .list-group .listcontent {
+    width: 86%;
+    float: left; }
+  .list-group .listbtn {
+    float: right;
+    margin: 100px auto; }

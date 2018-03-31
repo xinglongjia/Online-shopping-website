@@ -4,11 +4,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'searchFilter'
 })
-export class SearchFilterPipe implements PipeTransform {//using pipe to filter items
+export class SearchFilterPipe implements PipeTransform {
 
   transform(products: any, search: any): any {
     if (search === undefined) {
-      return products;          //if the result is null,all items will be returned
+      return products;          //当搜索为空时，返回所有产品
     }else{
       return products.filter((product) => {
         return product.name.toLowerCase().includes(search.toLowerCase());

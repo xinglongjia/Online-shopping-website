@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
       password:this.password,
       email:this.email
     }
-//using flashmessage to remind user some important hint
+
     if(!this.validateService.validateRegister(user)){
       this.flashMessageService.show('Please fill in all fields.',{cssClass:'alert-danger',timeout:3000});
       return false;
@@ -39,7 +39,7 @@ export class RegisterComponent implements OnInit {
     }
 
 
-    //calling registerUser method in authService
+    //注册
     this.authService.registerUser(user).subscribe(data => {
       if(data.success){
         this.flashMessageService.show('Registered successfully!',{cssClass:'alert-success',timeout:3000});

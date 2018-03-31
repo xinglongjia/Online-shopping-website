@@ -1,28 +1,44 @@
+<h2 class="page-header" style="text-align: center">Cart</h2>
+<!-- set Cart list display -->
 <div *ngIf="user">
-  <table id="cart-table" class="table table-striped">
-    <tr>
-      <th scope="col"></th>
-    <th scope="col">item</th>
-    <th scope="col">Product</th>
-    <th scope="col">location</th>
-      <th scope="col">Qty</th>
-      <th scope="col">Unit price</th>
-      <th scope="col">subtotal</th>
-      <th scope="col">operation</th>
-  </tr>
-  <tr *ngFor="let item of user.cartcontent;let i = index">
-    <td><label [class.selected]="i.checked"><input #i type="checkbox" value="" (click)="changestatus(item,i)"></label></td>
-        <td><img data-src="{{item.image}}" alt="Card image cap" style="width: 100px;height: 60px"></td>
-        <td><a>{{item.name}}</a></td>
-        <td><p>{{item.location}}</p></td>
-    <td><input class="col-xs-1" style="width: 30px" [(ngModel)]="item.Qty"></td><td>{{item.price|currency}}</td><td>{{item.price*item.Qty|currency}}</td>
-        <td><button class="btn btn-danger" (click)="deleteitem(item)">Delete</button></td>
-  </tr>
+  <table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Item</th>
+        <th scope="col">Product</th>
+        <th scope="col">Location</th>
+        <th scope="col">Qty</th>
+        <th scope="col">Unit price</th>
+        <th scope="col">Subtotal</th>
+        <th scope="col">Operation</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr *ngFor="let item of user?.cartcontent;let i=index" >
+        <th><label [class.selected]="i.checked">
+          <input #i type="checkbox" value="" (click)="changestatus(item,i)"></label>
+        </th>
+        <td><img data-src="{{item.image}}" alt="Card image cap" style="width: 80px;height: 60px"></td>
+        <td [routerLink]="['/detail', item._id]">{{item.name}}</td>
+        <td>{{item.location}}</td>
+        <td><input class="col-xs-1" style="width: 30px" [(ngModel)]="item.Qty"></td><td>{{item.price|currency}}</td><td>{{item.price*item.Qty|currency}}</td>
+       <td><button class="btn btn-outline-danger" (click)="deleteitem(item)">Delete</button></td>
+      </tr>
+    </tbody>
+
   </table>
-  <div>
-  <p id="totalitems">total items:{{totalitem}}</p><br><br>
-  <p id="total">total:{{total|currency}}</p>
-  <button id="checkout" class="btn btn-success" [routerLink]="['/checkout']" >Checkout</button>
+
+  <!-- display total price and items -->
+  <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action disabled">
+          Total Items: {{totalitem}}
+      </a>
+      <a href="#" class="list-group-item list-group-item-action disabled">
+          Total Price: {{total|currency}}
+      </a>
+      <button id="checkout" class="btn btn-success" [routerLink]="['/checkout']" >Checkout</button>
   </div>
 </div>
 

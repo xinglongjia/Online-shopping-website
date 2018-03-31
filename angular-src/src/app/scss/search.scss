@@ -1,0 +1,40 @@
+// set search list selected style
+.selected{
+    background-color: gainsboro;
+    color: black;
+}
+
+// set serch list style
+.list{
+    float: left;
+    width:23%;
+    height:100%;
+    margin-top:60px;
+    margin-left:0;
+    .searchlist{
+        li{
+            width:100%;
+            height:100px;
+            float: left;
+            overflow: scroll;
+            margin: 20px;
+            position: relative;
+            background-color: whitesmoke;
+            &:hover{
+                background-color: gray;
+                color:white;
+                left: .5em;
+            }
+        }
+    }
+}
+
+// set sort list style
+.list-group{
+    width:70%;
+    float: right;
+    margin-right: 0;
+    margin-top:46px;
+}
+  
+

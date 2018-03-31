@@ -22,7 +22,7 @@
     "passport": "*",
     "passport-jwt": "*"
   },
-  "author": "Hanwen Guo",
+  "author": "Xinglong Jia",
   "license": "ISC",
   "devDependencies": {
     "@angular/cli": "^1.6.0"

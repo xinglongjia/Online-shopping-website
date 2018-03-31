@@ -13,7 +13,7 @@ export class ProfileComponent implements OnInit {
               private router:Router) { }
 
   ngOnInit() {
-    this.authService.getProfile().subscribe(profile =>{//get user information from mongodb
+    this.authService.getProfile().subscribe(profile =>{
       this.user=profile.user;
     },
 

@@ -10,10 +10,10 @@ import{User} from "../login/user"
 export class BookmarkComponent implements OnInit {
   user:User;
   search:any;
-  constructor(private bookmarkService:BookmarkService) { }//add service in constructor
+  constructor(private bookmarkService:BookmarkService) { }
 
-  ngOnInit() {//get user's information
-    this.bookmarkService.getUser().subscribe(User=> {
+  ngOnInit() {
+    this.bookmarkService.getUser().subscribe(User=> {//get user's information
         this.user = User.user;
       },
       err=> {
@@ -28,7 +28,7 @@ export class BookmarkComponent implements OnInit {
     window.location.reload(true)
   }
 
-  gotodetail(item){//jump to product detail page
+  gotodetail(item){
     window.location.href = item.url;
   }
 

@@ -1,30 +1,28 @@
 <h2 class="page-header" style="text-align: center">Contact Us</h2>
-<form #checkform="ngForm" (submit)="onSubmit()">
-
-  <div class="form-group">
-  <label>Question Type:</label>
-  
-  <select class="form-control">
-  <!-- <option value="" disabled="true"><span>Select delivery type</span> </option> -->
-  <option value="price">Question about product price</option>
-  <option value="location">Question about product location</option>
-  <option value="rating">Question about product rating</option>
-  </select>
-  </div>
-
-  <div class="form-group" id="question">
-    <label >Name</label>
-    <input type="text" class="form-control" id="question" placeholder="Enter question" [(ngModel)]="question.content" required 
-    name="question" #question="ngModel">
-    <div *ngIf="question.errors && (question.dirty || question.touched)" class="alert alert-danger">
-      <div [hidden]="!question.errors.required">Your answer is empty now!</div>
+<!-- set contact dialog -->
+<div class="card border-dark mb-3" id="checkout" >
+    <div class="card-header">Any question? Very pleasure to help you ! </div>
+    <div class="card-body text-dark">
+      <h4 class="card-title">Question Type</h4>
+      <select class="form-control" id="exampleSelect1">
+          <option value="price">Question about product price</option>
+          <option value="location">Question about product location</option>
+          <option value="rating">Question about product rating</option>
+      </select>
       
+      <form #checkform="ngForm" (submit)="onSubmit()" class="question">  
+      <div class="form-group">
+          <h4 class="card-title">Could you please provide some details ?</h4>
+          <input class="form-control" rows="3" id="question" placeholder="Enter question" [(ngModel)]="question.content" required 
+          name="question" #question="ngModel">
+          <div *ngIf="question.errors && (question.dirty || question.touched)" class="alert alert-danger">
+            <div [hidden]="!question.errors.required">Sorry we can't really get your question!</div>
+          </div>
+      </div>
+      <div class="btns">
+          <button class="btn btn-primary" type="button" (click)=goBack()>Back</button>
+          <button type="submit" [disabled]="!checkform.form.valid" class="btn btn-primary">Submit</button>
+      </div>
+      </form>
     </div>
-  </div>
-  
-
-  <div class="btns">
-  <button class="btn btn-primary" type="button" (click)=goBack()>Back</button>
-  <button type="submit" [disabled]="!checkform.form.valid" class="btn btn-primary">Submit</button>
-  </div>
-</form>
+</div>

@@ -25,8 +25,8 @@ export class ProductListComponent implements OnInit {
   constructor(private flashMessageService: FlashMessagesService,private productsService:ProductsService,private authService:AuthService,private router: Router,private cartService:CartService) { }
 
   ngOnInit() {
-    this.productsService.getProductList().subscribe(res=>this.products=res);//get product list to display
-    this.authService.getProfile().subscribe(profile =>{//get user information for adding items to cart
+    this.productsService.getProductList().subscribe(res=>this.products=res);
+    this.authService.getProfile().subscribe(profile =>{
       this.user=profile.user;
     });
   }

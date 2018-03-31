@@ -10,7 +10,7 @@ import {FlashMessagesService} from "angular2-flash-messages";
 })
 export class CheckoutComponent implements OnInit {
   customer= new Customer();
-
+ 
 
   constructor(
     private router:Router,
@@ -20,12 +20,12 @@ export class CheckoutComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(){//form onsubmit event
+  onSubmit(){
     this.flashMessagesService.show('Your order is placed ! Thank you to choose Big Hammer !',{cssClass:'alert-success',timeout:6000});
     this.router.navigate(['']);
   }
 
 
 
-
+ 
 }
