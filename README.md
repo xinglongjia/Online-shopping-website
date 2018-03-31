@@ -14,6 +14,9 @@ Angular-JWT
 CORS  
 bcriptjs  
 
+## Website looks:
+![image](https://github.com/xinglongjia/Online-shopping-website/blob/master/home.png)
+![image](https://github.com/xinglongjia/Online-shopping-website/blob/master/prouctList.png)
 
 ## Basic functions:
 User could sign up by username/password  
