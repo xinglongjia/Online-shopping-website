@@ -1,0 +1,13 @@
+
+<div class="row">
+  <div class="card">
+    <img data-src="{{product.image}}" alt="Card image cap" style="width: 300px;height: 250px">
+    <button (click)="OnClickaddtocart(product)" class="btn btn-outline-primary">add to cart</button>
+    <button (click)="OnClickaddtobookmark(product)" class="btn btn-outline-primary">add to bookmark</button>
+    <button [routerLink]="['/contact']" class="btn btn-outline-primary">contact</button>
+    <h3><a>{{product.name}}</a></h3>
+    <h4>Price: {{product.price}}</h4>
+    <p>Location: {{product.location}}</p>
+    <p class="card-text">Description: {{product.description}}</p>
+  </div>
+</div>

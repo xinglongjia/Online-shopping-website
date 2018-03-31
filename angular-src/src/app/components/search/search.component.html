@@ -1,0 +1,33 @@
+<div class="album text-muted">
+  <button class="btn btn-outline-primary" (click)="sortType('name')" [class.active]="sortBy==='name'">name</button>
+  <button class="btn btn-outline-primary" (click)="sortType('pricel2h')" [class.active]="sortBy==='price'">price low to high</button>
+  <button class="btn btn-outline-primary" (click)="sortType('priceh2l')" [class.active]="sortBy==='price'">price high to low</button>
+  <button class="btn btn-outline-primary" (click)="sortType('rating')" [class.active]="sortBy==='rating'">rating</button>
+  <button class="btn btn-outline-primary" (click)="clear()">clear</button>
+</div>
+
+<div class="list">
+   <ul class="searchlist">
+      <li *ngFor="let product of products|searchFilter:search"
+      [class.selected]="product===selectedProduct"
+      (click)="onSelect(product)">
+        <h3><a>{{product.name}}</a></h3>
+        <img data-src="{{product.image}}" alt="Card image cap" style="width: 300px;height: 250px">
+      </li>
+    </ul>
+</div>
+
+
+
+
+<div class="result">
+    <li *ngFor="let product of result">
+        <img data-src="{{product.image}}" alt="Card image cap" style="width: 300px;height: 250px">
+        <h3><a [routerLink]="['/detail', product._id]">{{product.name}}</a></h3>
+        <h4>Price: {{product.price}}</h4>
+        <p>Location: {{product.location}}</p>
+        <p>rating:{{product.rating}}</p>
+        <p class="card-text">Description: {{product.description}}</p>
+    </li>
+  </div>
+

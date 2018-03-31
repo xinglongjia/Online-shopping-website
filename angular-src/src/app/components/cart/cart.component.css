@@ -1,0 +1,11 @@
+#cart-table{
+  position: relative;
+  table-layout: auto;
+  width:1100px;
+}
+#total,#totalitems{
+  float: left;
+}
+#checkout{
+  float: right;
+}

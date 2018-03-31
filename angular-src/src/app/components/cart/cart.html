@@ -1,0 +1,28 @@
+<div *ngIf="user">
+  <table id="cart-table" class="table table-striped">
+    <tr>
+      <th scope="col"></th>
+    <th scope="col">item</th>
+    <th scope="col">Product</th>
+    <th scope="col">location</th>
+      <th scope="col">Qty</th>
+      <th scope="col">Unit price</th>
+      <th scope="col">subtotal</th>
+      <th scope="col">operation</th>
+  </tr>
+  <tr *ngFor="let item of user.cartcontent;let i = index">
+    <td><label [class.selected]="i.checked"><input #i type="checkbox" value="" (click)="changestatus(item,i)"></label></td>
+        <td><img data-src="{{item.image}}" alt="Card image cap" style="width: 100px;height: 60px"></td>
+        <td><a>{{item.name}}</a></td>
+        <td><p>{{item.location}}</p></td>
+    <td><input class="col-xs-1" style="width: 30px" [(ngModel)]="item.Qty"></td><td>{{item.price|currency}}</td><td>{{item.price*item.Qty|currency}}</td>
+        <td><button class="btn btn-danger" (click)="deleteitem(item)">Delete</button></td>
+  </tr>
+  </table>
+  <div>
+  <p id="totalitems">total items:{{totalitem}}</p><br><br>
+  <p id="total">total:{{total|currency}}</p>
+  <button id="checkout" class="btn btn-success" [routerLink]="['/checkout']" >Checkout</button>
+  </div>
+</div>
+

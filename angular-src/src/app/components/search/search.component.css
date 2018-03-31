@@ -1,0 +1,46 @@
+.selected{
+    background-color: gainsboro !important;
+    color: white;
+}
+
+.sortclbtn{
+    background-color:grey;
+    color: whitesmoke;
+}
+.searchlist li:hover{
+   background-color: gray;
+   color:white;
+   left: .5em;
+}
+.searchlist li{
+   width:100%;
+    height:100px;
+    float: left;
+    overflow: scroll;
+    margin: 20px;
+    position: relative;
+    background-color: whitesmoke;
+}
+.result{
+    float:right;
+    margin:0 auto;
+    width:60%;
+    height:100%;
+}
+
+button{
+    margin:10px;
+
+}
+
+.selected{
+    background-color: red ;
+    color: white;
+}
+
+.list{
+    float: left;
+    width:30%;
+    height:100%;
+    margin:0 auto;
+}

@@ -1,0 +1,10 @@
+<h2 class="page-header" style="text-align: center">Order History</h2>
+<form #checkform="ngForm" (submit)="onSubmit()">
+
+<li *ngFor="let item of user?.orders">
+    <img data-src="{{item.image}}" alt="Card image cap" style="width: 100px;height: 60px">
+    <p>{{item.name}}</p>
+    
+  
+</li>
+       
